@@ -5,14 +5,7 @@ All notable changes to this module are documented here. The format follows
 
 ## [1.0.0] - 2026-10-31
 
-First public release. The module was renamed from "Draw Steel: Ability Animations" (`ds-auto-fx`) to
-"Stef's Auto FX for Draw Steel" (`stef-ds-fx`).
-
-### Upgrading from Draw Steel: Ability Animations
-- On the first load the GM's client imports the old module's data: the world settings (including the edited rules
-  tables), each player's client settings, and every ability's own Animation recipe (`flags.ds-auto-fx.recipe` moves
-  to `flags.stef-ds-fx.recipe`). An Animator setting of "This module, for every ability" keeps its meaning.
-- Rerun it with `game.modules.get("stef-ds-fx").api.migrateLegacy({ dryRun: true })` to see what it would move.
+First public release.
 
 ### Features
 - Animations and sounds for Draw Steel abilities through Sequencer: a cast, an area effect, a weapon swing, arrow,
@@ -23,7 +16,7 @@ First public release. The module was renamed from "Draw Steel: Ability Animation
 - A world rules editor for the candidate lists, with a ▶ audition button per row.
 - Works next to DS AA Bridge and Automated Animations; with Stef's Automation Suite for Draw Steel it reads each
   card's targets from the suite's record.
-- API (`resolve`, `play`, `preview`, `audition`, `selfCheck`, `migrateLegacy`) and the hooks `dsAutoFx.prePlay` and
+- API (`resolve`, `play`, `preview`, `audition`, `selfCheck`) and the hooks `dsAutoFx.prePlay` and
   `dsAutoFx.played`.
 
 ## Before 1.0 (private development as "Draw Steel: Ability Animations")

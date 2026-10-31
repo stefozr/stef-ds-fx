@@ -172,7 +172,6 @@ Players can turn effects or sounds off for themselves in Sequencer's own setting
 - `preview(item, {source, targets, tier, crit})`: play for this client only.
 - `audition({kind, slot, row, candidates, source, target, onStep})`: play every candidate of one rules row, one
   after another, for this client only. Returns `{played, missing}`.
-- `migrateLegacy({dryRun, force})`: imports the data of the pre-1.0 module (see *Upgrading* below).
 - `selfCheck()`: returns `{ok, problems, info}`. It reports a missing Sequencer, missing packs, steps with no
   available file, Sequencer permissions above Player, and the bridge state.
 
@@ -181,21 +180,6 @@ Hooks:
 - `dsAutoFx.played(context, recipe)`.
 
 `context` is `{message, item, source, targets: [{token, tier, crit}], damageType, shapes}`.
-
-## Upgrading from Draw Steel: Ability Animations (`ds-auto-fx`)
-
-This module was called "Draw Steel: Ability Animations" (`ds-auto-fx`) before 1.0. To move a world over:
-
-1. Install this module and enable it; disable the old one.
-2. On the first load the GM's client copies the old module's data and shows a notification:
-   - every world setting, including the rules you edited in *Edit rules*;
-   - each user's client setting (Debug logging), when that user next loads the world;
-   - every ability's own Animation section (Custom / None and its fields), on world items, actors' items and
-     unlinked tokens;
-   - an Animator setting of "This module, for every ability" keeps its meaning.
-3. Reload (F5). To see what would move, or to run it again, use
-   `game.modules.get("stef-ds-fx").api.migrateLegacy({ dryRun: true })` in the console (`force: true` reruns it).
-4. Remove the old module.
 
 ## Known limitations
 
