@@ -1,0 +1,171 @@
+{
+  "DSAUTOFX": {
+    "Settings": {
+      "enabled": {
+        "Name": "Animate abilities",
+        "Hint": "Play an animation and sound when a Draw Steel ability is used: a cast on the caster, a swing or projectile to each target, then an impact sized by that target's tier."
+      },
+      "animator": {
+        "Name": "Animator while DS AA Bridge is active",
+        "Hint": "Which module animates abilities that have no animation of their own. An ability set to Custom or None on its sheet is always handled by this module. Without DS AA Bridge this module animates everything.",
+        "Choices": {
+          "auto": "DS AA Bridge (this module only for abilities with their own animation)",
+          "stef-ds-fx": "This module, for every ability"
+        }
+      },
+      "waitForDice": {
+        "Name": "Wait for Dice So Nice",
+        "Hint": "Start the animation once the 3D dice of the card have settled."
+      },
+      "volume": {
+        "Name": "Sound volume",
+        "Hint": "Volume of ability sounds (0 turns them off). Each player can also mute Sequencer sounds in Sequencer's own settings."
+      },
+      "tierScale": {
+        "Name": "Impact size per tier",
+        "Hint": "Three numbers for tier 1, 2 and 3, separated by commas. A critical tier 3 (natural 19 or 20) also plays a flourish."
+      },
+      "areaEffects": {
+        "Name": "Area effects",
+        "Hint": "Play an effect over bursts, auras, cubes, walls and lines."
+      },
+      "signatures": {
+        "Name": "Signature animations",
+        "Hint": "Use the hand-picked animations built in for showpiece abilities (such as Power Chord, Incinerate or Unquiet Ground). An ability set to Custom or None on its sheet still uses its own."
+      },
+      "screenShake": {
+        "Name": "Screen shake on big hits",
+        "Hint": "Shake the view briefly when an attack lands a tier 3 result."
+      },
+      "hitFlash": {
+        "Name": "Flash on big hits",
+        "Hint": "Flash the target's token white when an attack lands a tier 3 result."
+      },
+      "rules": {
+        "Name": "Animation rules",
+        "Hint": "Overrides of the built-in animation rules."
+      },
+      "debug": {
+        "Name": "Debug logging",
+        "Hint": "Log what each card resolves to in the console (F12)."
+      }
+    },
+    "Rules": {
+      "MenuName": "Animation rules",
+      "MenuLabel": "Edit rules",
+      "MenuHint": "Choose the effect files for each kind of ability and element, and which keywords set an element.",
+      "Title": "Ability animation rules",
+      "Intro": "Each field is a comma-separated list of Sequencer database keys or file paths; the first one available on a client plays. Leave a field empty to keep the built-in list shown in grey; enter - to drop the row so the fallback row is used.",
+      "Kind": {
+        "files": "Effect",
+        "sounds": "Sound"
+      },
+      "Slot": {
+        "melee": "Melee swing",
+        "arrow": "Arrow",
+        "bolt": "Magic or psionic bolt",
+        "cast": "Cast on the caster",
+        "impact": "Impact",
+        "crit": "Critical flourish",
+        "burst": "Damaging burst or aura",
+        "area": "Damaging cube or wall",
+        "line": "Line",
+        "thrown": "Thrown weapon",
+        "heal": "Heal on the target",
+        "aura": "Aura or buff over the area",
+        "buff": "Buff on the target",
+        "zone": "Lasting zone (cube or wall without damage)"
+      },
+      "Fallback": "Fallback (any row)",
+      "UsesFallback": "(uses the fallback row)",
+      "Builtin": "Built-in",
+      "NoElement": "No element",
+      "Keywords": "Keywords that set an element",
+      "KeywordsHint": "Used when the ability deals no typed damage.",
+      "Reset": "Reset to built-in",
+      "ResetConfirm": "Remove all your changes to the animation rules?",
+      "Save": "Save",
+      "Audition": "Play this row's candidates one after another, for you only, from your selected token to your first target.",
+      "Auditioning": "Playing {n}/{total}: {key}",
+      "AuditionDone": "Done: {total} played.",
+      "AuditionNoToken": "Select a token (and target another) to audition."
+    },
+    "Item": {
+      "Legend": "Animation",
+      "ModeLabel": "Animation",
+      "Mode": {
+        "auto": "Automatic",
+        "custom": "Custom",
+        "none": "None"
+      },
+      "Auto": "Automatic",
+      "Preview": "Preview",
+      "PreviewHint": "Play this animation for you only, from your selected token (or this actor's token) to your targets.",
+      "BridgeFlag": "This ability has its own DS AA Bridge animation, so DS AA Bridge animates it:",
+      "Delivery": "Delivery",
+      "Element": "Element",
+      "SlotHint": "Empty fields use the automatic choice shown in grey. A field takes comma-separated Sequencer database keys or file paths (the first available plays); - turns that step off.",
+      "Slot": {
+        "cast": "Cast",
+        "travel": "Swing or projectile",
+        "impact": "Impact",
+        "crit": "Critical flourish",
+        "area": "Area",
+        "castSound": "Cast sound",
+        "travelSound": "Swing or projectile sound",
+        "impactSound": "Impact sound",
+        "areaSound": "Area sound"
+      },
+      "Animator": {
+        "stef-ds-fx": "Animated by this module",
+        "bridge": "Animated by DS AA Bridge",
+        "none": "Not animated"
+      }
+    },
+    "Delivery": {
+      "melee": "Melee swing",
+      "arrow": "Arrow",
+      "bolt": "Bolt",
+      "meleeRanged": "Swing when adjacent, else shot",
+      "burst": "Burst around the caster",
+      "area": "Area (cube or wall)",
+      "line": "Line",
+      "self": "On the caster"
+    },
+    "Element": {
+      "none": "Physical",
+      "magic": "Magic",
+      "psionic": "Psionic",
+      "acid": "Acid",
+      "cold": "Cold",
+      "corruption": "Corruption",
+      "fire": "Fire",
+      "holy": "Holy",
+      "lightning": "Lightning",
+      "poison": "Poison",
+      "psychic": "Psychic",
+      "sonic": "Sonic",
+      "earth": "Earth",
+      "nature": "Nature",
+      "force": "Force",
+      "music": "Music"
+    },
+    "Preview": {
+      "NoSequencer": "Ability animations need the Sequencer module.",
+      "NoToken": "Select a token, or place this actor's token on the scene, to preview its animation."
+    },
+    "Style": {
+      "unarmed": "Unarmed",
+      "light": "Light weapon",
+      "medium": "Medium weapon",
+      "heavy": "Heavy weapon",
+      "polearm": "Polearm",
+      "whip": "Whip or ensnaring"
+    },
+    "Physical": {
+      "slashing": "Physical: slashing",
+      "piercing": "Physical: piercing",
+      "bludgeoning": "Physical: bludgeoning"
+    }
+  }
+}

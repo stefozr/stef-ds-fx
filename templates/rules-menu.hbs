@@ -1,0 +1,34 @@
+<div class="stef-ds-fx-rules-body">
+  <p class="hint">{{localize "DSAUTOFX.Rules.Intro"}}</p>
+  <p class="hint stef-ds-fx-audition-status" aria-live="polite"></p>
+  {{#each groups}}
+  <details class="stef-ds-fx-rules-group">
+    <summary>{{title}}</summary>
+    {{#each rows}}
+    <div class="form-group">
+      <label>{{label}}</label>
+      <div class="form-fields">
+        <input type="text" name="{{name}}" value="{{value}}" placeholder="{{placeholder}}">
+        <button type="button" class="icon fa-solid fa-play stef-ds-fx-audition" data-action="audition"
+          data-kind="{{kind}}" data-slot="{{slot}}" data-row="{{row}}"
+          data-tooltip="DSAUTOFX.Rules.Audition" aria-label="{{localize "DSAUTOFX.Rules.Audition"}}"></button>
+      </div>
+    </div>
+    {{/each}}
+  </details>
+  {{/each}}
+  <details class="stef-ds-fx-rules-group">
+    <summary>{{localize "DSAUTOFX.Rules.Keywords"}}</summary>
+    <p class="hint">{{localize "DSAUTOFX.Rules.KeywordsHint"}}</p>
+    {{#each keywordRows}}
+    <div class="form-group">
+      <label>{{label}}</label>
+      <div class="form-fields">
+        <select name="{{name}}">
+          {{#each options}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+        </select>
+      </div>
+    </div>
+    {{/each}}
+  </details>
+</div>

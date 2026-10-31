@@ -1,0 +1,53 @@
+<fieldset class="stef-ds-fx">
+  <legend>{{localize "DSAUTOFX.Item.Legend"}}</legend>
+  <div class="form-group">
+    <label>{{localize "DSAUTOFX.Item.ModeLabel"}}</label>
+    <div class="form-fields">
+      <select data-fx-field="mode" {{#unless editable}}disabled{{/unless}}>
+        {{#each modes}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+      <button type="button" class="stef-ds-fx-preview" data-fx-action="preview" data-tooltip="DSAUTOFX.Item.PreviewHint">
+        <i class="fa-solid fa-play"></i> {{localize "DSAUTOFX.Item.Preview"}}
+      </button>
+    </div>
+  </div>
+  <p class="hint stef-ds-fx-trace">{{animator}} — {{trace}}</p>
+  {{#if bridgeAnimation}}
+  <p class="hint stef-ds-fx-warning"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "DSAUTOFX.Item.BridgeFlag"}} <code>{{bridgeAnimation}}</code></p>
+  {{/if}}
+  {{#if custom}}
+  <div class="form-group">
+    <label>{{localize "DSAUTOFX.Item.Delivery"}}</label>
+    <div class="form-fields">
+      <select data-fx-field="delivery" {{#unless editable}}disabled{{/unless}}>
+        {{#each deliveries}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>{{localize "DSAUTOFX.Item.Element"}}</label>
+    <div class="form-fields">
+      <select data-fx-field="element" {{#unless editable}}disabled{{/unless}}>
+        {{#each elements}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+    </div>
+  </div>
+  {{#each slots}}
+  <div class="form-group">
+    <label>{{label}}</label>
+    <div class="form-fields">
+      <input type="text" data-fx-field="{{key}}" value="{{value}}" placeholder="{{placeholder}}" {{#unless ../editable}}disabled{{/unless}}>
+    </div>
+  </div>
+  {{/each}}
+  {{#each sounds}}
+  <div class="form-group">
+    <label>{{label}}</label>
+    <div class="form-fields">
+      <input type="text" data-fx-field="{{key}}" value="{{value}}" placeholder="{{placeholder}}" {{#unless ../editable}}disabled{{/unless}}>
+    </div>
+  </div>
+  {{/each}}
+  <p class="hint">{{localize "DSAUTOFX.Item.SlotHint"}}</p>
+  {{/if}}
+</fieldset>

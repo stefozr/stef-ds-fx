@@ -1,0 +1,46 @@
+fieldset.stef-ds-fx .stef-ds-fx-preview {
+  flex: 0 0 auto;
+  width: auto;
+  white-space: nowrap;
+}
+
+fieldset.stef-ds-fx .stef-ds-fx-trace {
+  margin: 0.25rem 0 0.5rem;
+}
+
+fieldset.stef-ds-fx .stef-ds-fx-warning code {
+  overflow-wrap: anywhere;
+}
+
+.stef-ds-fx-rules .stef-ds-fx-rules-group {
+  margin-bottom: 0.5rem;
+}
+
+.stef-ds-fx-rules .stef-ds-fx-rules-group > summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.25rem 0;
+}
+
+.stef-ds-fx-rules .form-group > label {
+  flex: 0 0 11rem;
+}
+
+/* Only the rule list scrolls; the Save / Reset footer stays in view. */
+.stef-ds-fx-rules .window-content {
+  overflow: hidden;
+}
+
+.stef-ds-fx-rules .stef-ds-fx-rules-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.stef-ds-fx-rules .stef-ds-fx-audition {
+  flex: 0 0 2rem;
+}
+
+.stef-ds-fx-rules .stef-ds-fx-audition-status:empty {
+  display: none;
+}

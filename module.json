@@ -1,0 +1,106 @@
+{
+  "id": "stef-ds-fx",
+  "title": "Stef's Auto FX for Draw Steel",
+  "description": "Animations and sounds for Draw Steel abilities through Sequencer: a cast on the caster, a weapon swing, arrow or bolt to each target, then an impact sized by that target's tier of success (with a flourish on a critical), plus effects over bursts, cubes, walls and lines. The animation is chosen from the ability's distance, keywords and damage type, and any ability can be given its own in the Animation section of its Details tab. Uses the installed JB2A, Eskie, BLFX and PSFX packs (none are bundled). Stef's Auto FX for Draw Steel is not affiliated with MCDM Productions, LLC. Draw Steel is a trademark of MCDM Productions, LLC.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Stefan",
+      "url": "https://github.com/stefozr"
+    }
+  ],
+  "url": "https://github.com/stefozr/stef-ds-fx",
+  "manifest": "https://github.com/stefozr/stef-ds-fx/releases/latest/download/module.json",
+  "download": "https://github.com/stefozr/stef-ds-fx/releases/download/v1.0.0/module.zip",
+  "bugs": "https://github.com/stefozr/stef-ds-fx/issues",
+  "license": "LICENSE",
+  "readme": "README.md",
+  "changelog": "CHANGELOG.md",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.369"
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/stef-ds-fx.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "styles",
+        "templates",
+        "lang"
+      ]
+    }
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "draw-steel",
+        "type": "system",
+        "compatibility": {
+          "minimum": "1.1.2",
+          "verified": "1.1.2"
+        },
+        "reason": "Reads Draw Steel ability cards, power rolls and ability items."
+      }
+    ],
+    "requires": [
+      {
+        "id": "sequencer",
+        "type": "module",
+        "compatibility": {
+          "minimum": "4.0.0",
+          "verified": "4.3.0"
+        },
+        "reason": "Plays every animation and sound."
+      }
+    ],
+    "recommends": [
+      {
+        "id": "blfx-assets-pack01",
+        "type": "module",
+        "reason": "Boss Loot effects and sounds: the default for most rows and every signature ability."
+      },
+      {
+        "id": "jb2a_patreon",
+        "type": "module",
+        "reason": "JB2A animations used as fallbacks (the free JB2A_DnD5e pack also works)."
+      },
+      {
+        "id": "eskie-effects",
+        "type": "module",
+        "reason": "Eskie animations used as fallbacks for several rows."
+      },
+      {
+        "id": "psfx-patreon",
+        "type": "module",
+        "reason": "PSFX sounds used as fallbacks when BLFX is not installed."
+      },
+      {
+        "id": "stef-ds-automation",
+        "type": "module",
+        "reason": "Per-target tier animations from the suite's resolution of each ability (who was targeted, and with which tier)."
+      },
+      {
+        "id": "ds-aa-bridge",
+        "type": "module",
+        "reason": "Optional: works next to DS AA Bridge and Automated Animations; the bridge stays the default animator unless the Animator setting hands every ability to this module."
+      }
+    ]
+  }
+}
